@@ -1,0 +1,170 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color: rgba(255, 255, 255, 0.8);
+    color-scheme: light dark;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #242424;
+}
+
+#app {
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.input-container {
+    width: 45vw;
+    margin: auto;
+    position: relative;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #213547;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+#submitBtn {
+    padding: 0.4rem 1rem;
+    position: absolute;
+    right: 8%;
+    margin: 0.4rem;
+}
+
+#submitBtn:hover {
+    background-color: #1a2c3b;
+}
+/* button:focus,
+button:focus-visible {
+     outline: 4px auto -webkit-focus-ring-color; 
+} */
+
+input[type="text"] {
+    width: 80%;
+    margin: auto;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: inherit;
+    outline: none;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    background-color: #3d709d10;
+    background-color: #1a1a1a;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 90%;
+    gap: 0.8rem;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    padding: 0 1rem;
+    /* margin: 0.5rem 0; */
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    /* color: #1a1a1a; */
+}
+
+p {
+    display: inline;
+    font: inherit;
+    font-size: 1.3rem;
+}
+
+.checked {
+    text-decoration: line-through;
+}
+
+.deleteBtn {
+    color: #fff;
+    background-color: rgba(255, 28, 28, 0.948);
+}
+.deleteBtn:hover {
+    background-color: red;
+}
+
+#mode {
+    font-size: 2.2rem;
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in;
+}
+#mode:hover {
+    transform: scale(1.1);
+}
+
+/* Change styles when in light mode !  */
+.light-mode {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: black;
+    > div {
+        > div {
+            > input[type="text"] {
+                background-color: #385a7848;
+                color: #1a1a1a;
+            }
+            > #submitBtn {
+                background-color: #385a78;
+                color: #fff;
+            }
+            #submitBtn:hover {
+                background-color: #2c475f;
+            }
+        }
+    }
+
+    > div {
+        > div {
+            .list {
+                background-color: #e7585839;
+                color: #000;
+            }
+        }
+    }
+
+    > button {
+        color: black;
+    }
+}
