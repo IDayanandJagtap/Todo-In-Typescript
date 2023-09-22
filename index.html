@@ -8,13 +8,14 @@
   <title>Todo</title>
 </head>
 
-<body>
+<body class="light-mode">
+  <span id="mode">☀️</span>
   <div id="app">
-    <span id="mode">☀️</span>
     <div class="input-container">
       <input type="text" placeholder="Enter a task ..." class="input">
-      <button id="submitBtn" onclick=createTodo>Create</button>
+      <button id="submitBtn" onclick=createTodo>+</button>
     </div>
+    <h3>Your todos</h3>
     <div class="container">
       <p> No todos</p>
     </div>

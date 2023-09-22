@@ -12,26 +12,30 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 }
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-    background-color: #242424;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0b0b0b;
 }
 
 #app {
     max-width: 1366px;
-    margin: 0 auto;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
     padding: 2rem;
-    text-align: center;
 }
 
 .input-container {
-    width: 45vw;
-    margin: auto;
+    width: 70%;
+    margin: 5rem auto;
     position: relative;
 }
 
@@ -48,33 +52,35 @@ button {
 }
 
 #submitBtn {
-    padding: 0.4rem 1rem;
+    padding: 0.4rem 1.2rem;
     position: absolute;
-    right: 8%;
-    margin: 0.4rem;
+    right: 5px;
+    top: 0;
+    margin: 0.4rem 0.1rem;
 }
 
 #submitBtn:hover {
     background-color: #1a2c3b;
 }
-/* button:focus,
-button:focus-visible {
-     outline: 4px auto -webkit-focus-ring-color; 
-} */
 
 input[type="text"] {
-    width: 80%;
+    width: 100%;
     margin: auto;
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 3.5rem 0.8rem 1.2rem;
     font-size: 1.2rem;
     font-weight: 500;
     font-family: inherit;
     outline: none;
     border: 1px solid #1a1a1a;
     border-radius: 8px;
-    background-color: #3d709d10;
-    background-color: #1a1a1a;
+    background-color: #1e1e1e;
     color: rgba(255, 255, 255, 0.7);
+}
+
+h3 {
+    font-family: inherit;
+    font-size: 1.7rem;
+    text-align: center;
 }
 
 .container {
@@ -84,7 +90,7 @@ input[type="text"] {
     align-items: center;
     margin: 2rem auto;
     padding: 2rem;
-    width: 90%;
+    width: 70%;
     gap: 0.8rem;
 }
 
@@ -94,8 +100,9 @@ input[type="text"] {
     align-items: center;
     width: 100%;
     border-radius: 8px;
-    background-color: #1a1a1a;
-    padding: 0 1rem;
+    background-color: #1e1e1e;
+    /* background-color: #000; */
+    padding: 1rem;
     /* margin: 0.5rem 0; */
 }
 
@@ -109,6 +116,8 @@ p {
     display: inline;
     font: inherit;
     font-size: 1.3rem;
+    margin: 0 0.7rem;
+    text-align: start;
 }
 
 .checked {
@@ -124,10 +133,10 @@ p {
 }
 
 #mode {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     position: absolute;
     top: 1rem;
-    right: 3rem;
+    right: 1rem;
     cursor: pointer;
     transition: transform 0.2s ease-in;
 }
@@ -137,13 +146,14 @@ p {
 
 /* Change styles when in light mode !  */
 .light-mode {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.95);
     color: black;
     > div {
         > div {
             > input[type="text"] {
                 background-color: #385a7848;
                 color: #1a1a1a;
+                border: 0.2px solid #385a78;
             }
             > #submitBtn {
                 background-color: #385a78;
@@ -166,5 +176,40 @@ p {
 
     > button {
         color: black;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    #app {
+        width: 100vw;
+        padding: 2rem 1rem;
+    }
+    .input-container {
+        width: 100%;
+    }
+    input[type="text"] {
+        padding: 0.8rem 3.2rem 0.8rem 1.2rem;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    #submitBtn,
+    .deleteBtn {
+        padding: 0.3rem 0.8rem;
+    }
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+    .list {
+        padding: 1rem;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    #mode {
+        font-size: 1.4rem;
     }
 }
