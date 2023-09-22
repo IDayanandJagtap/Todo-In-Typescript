@@ -25,6 +25,8 @@ const container = document.getElementsByClassName(
     "container"
 )[0] as HTMLDivElement;
 
+const h3 = document.getElementsByTagName("h3")[0] as HTMLHeadingElement;
+
 const submitBtn = document.getElementById("submitBtn") as HTMLButtonElement;
 
 // Create a todo (handleOnSubmitClick):
@@ -88,11 +90,9 @@ const showTodos = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
 
     if (todos.length === 0) {
-        const p = document.createElement("p");
-        p.innerText = "No todos !";
-
-        container.append(p);
+        h3.innerText = "No todos !";
     } else {
+        h3.innerText = "Your todos";
         todos.map((e) => generateHtml(e));
     }
 };
